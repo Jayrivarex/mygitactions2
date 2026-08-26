@@ -1,20 +1,9 @@
-name: Super-Linter
+name: Test Workflow
 
-on:
-  push:
-    branches:
-      - main
+on: push
 
 jobs:
-  super-lint:
-    name: Lint code base
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Run Super-Linter
-        uses: super-linter/super-linter@v5
-        env:
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: echo "Hola, Actions funciona correctamente!"
